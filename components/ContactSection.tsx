@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Share2 } from 'lucide-react';
-import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL } from '../constants';
+import { Phone, Mail, MapPin, Facebook, Share2, Clock } from 'lucide-react';
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from '../constants';
 
 // TikTok Icon Component since it might not be available in all versions of lucide-react
 const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -53,7 +53,7 @@ const ContactSection: React.FC = () => {
               <p className="text-sm text-blue-300 mt-2">We reply within 24 hours</p>
             </div>
 
-            {/* Address */}
+            {/* Address & Hours */}
             <div className="flex flex-col items-center p-8 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1">
               <div className="bg-stcRed p-4 rounded-full mb-6 shadow-lg">
                 <MapPin className="w-8 h-8 text-white" />
@@ -67,6 +67,13 @@ const ContactSection: React.FC = () => {
                 <div>
                    <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Office 2</h4>
                   <p className="font-bold text-sm leading-tight">{CONTACT_ADDRESS_2}</p>
+                </div>
+                <div className="pt-3 border-t border-white/10 mt-2">
+                   <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1 flex items-center justify-center gap-1">
+                      <Clock size={12} /> Working Hours
+                   </h4>
+                   <p className="font-bold text-sm leading-tight">{WORKING_HOURS}</p>
+                   <p className="text-xs text-blue-200/70 mt-0.5">{WORKING_HOURS_NOTE}</p>
                 </div>
               </div>
             </div>

@@ -20,6 +20,8 @@ export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61576265866
 export const TIKTOK_URL = "https://www.tiktok.com/@superman.travel.c?_r=1&_t=ZM-92QoEqs5I76";
 export const CONTACT_ADDRESS_1 = "Effiduasi, Opposite District Assembly, Off Asamang Road";
 export const CONTACT_ADDRESS_2 = "Kwamo Kumasi, in front of the chiefs palace, first floor";
+export const WORKING_HOURS = "Monday to Friday: 8am - 4pm";
+export const WORKING_HOURS_NOTE = "Holidays are excluded";
 
 // Static Image URLs
 export const HERO_IMAGE_URL = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80";
@@ -102,6 +104,7 @@ Key Information:
 - Email: ${CONTACT_EMAIL}
 - Facebook: ${FACEBOOK_URL}
 - TikTok: ${TIKTOK_URL}
+- Working Hours: ${WORKING_HOURS} (${WORKING_HOURS_NOTE})
 - Locations: 
   1. ${CONTACT_ADDRESS_1}
   2. ${CONTACT_ADDRESS_2}

@@ -5,9 +5,9 @@ import ServicesSection from './components/ServicesSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import AiAssistant from './components/AiAssistant';
-import { Plane, MapPin, Phone, Mail, Facebook } from 'lucide-react';
+import { Plane, MapPin, Phone, Mail, Facebook, Clock } from 'lucide-react';
 import { scrollToSection } from './utils';
-import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL } from './constants';
+import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from './constants';
 
 // TikTok Icon Component
 const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -95,7 +95,14 @@ const App: React.FC = () => {
                     <Mail size={16} className="text-stcRed" />
                     <span>{CONTACT_EMAIL}</span>
                  </li>
-                 <li className="flex items-center gap-2">
+                 <li className="flex items-start gap-2">
+                    <Clock size={16} className="text-stcRed mt-1" />
+                    <div className="flex flex-col">
+                       <span>{WORKING_HOURS}</span>
+                       <span className="text-xs opacity-70">{WORKING_HOURS_NOTE}</span>
+                    </div>
+                 </li>
+                 <li className="flex items-center gap-2 mt-2">
                     <Facebook size={16} className="text-stcRed" />
                     <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Facebook Page</a>
                  </li>
