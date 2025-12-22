@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
-import AiAssistant from './components/AiAssistant';
 import { Plane, MapPin, Phone, Mail, Facebook, Clock } from 'lucide-react';
 import { scrollToSection } from './utils';
 import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from './constants';
@@ -118,8 +117,6 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
-
-      <AiAssistant />
     </div>
   );
 };
