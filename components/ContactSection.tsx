@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Facebook, Share2, Clock } from 'lucide-react';
-import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from '../constants';
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from '../constants';
 
 // TikTok Icon Component since it might not be available in all versions of lucide-react
 const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -20,6 +20,24 @@ const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+// WhatsApp Icon Component
+const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+  </svg>
+);
+
 const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-stcBlue text-white">
@@ -28,7 +46,7 @@ const ContactSection: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Contact Superman Travel Consult today. Whether you need a student visa for the USA, a work permit for Canada, or planning a trip to China, Dubai, or Schengen countries, we are here to help.
+              Contact Superman Travel Consult today. Whether you need a student visa for the USA, a work permit for Canada, or planning a trip to China, Dubai, Germany, Schengen countries, or any country of interest, we are here to help.
             </p>
           </div>
 
@@ -102,6 +120,15 @@ const ContactSection: React.FC = () => {
                 >
                   <TikTokIcon className="w-5 h-5" />
                   <span>TikTok</span>
+                </a>
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 py-2 px-4 rounded-lg transition-colors w-full font-medium"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
             </div>

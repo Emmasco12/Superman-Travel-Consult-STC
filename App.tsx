@@ -6,7 +6,7 @@ import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import { Plane, MapPin, Phone, Mail, Facebook, Clock } from 'lucide-react';
 import { scrollToSection } from './utils';
-import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from './constants';
+import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from './constants';
 
 // TikTok Icon Component
 const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -26,6 +26,24 @@ const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+// WhatsApp Icon Component
+const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+  </svg>
+);
+
 const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -40,7 +58,7 @@ const App: React.FC = () => {
         <section className="bg-stcRed py-16 text-white overflow-hidden relative">
           <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">Dreaming of USA, UK, China, or Dubai?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">Dreaming of USA, UK, China, Dubai, Germany, or any country of interest?</h2>
               <p className="text-red-100 text-lg md:text-xl">Let us handle the paperwork while you pack your bags.</p>
             </div>
             <a 
@@ -108,6 +126,10 @@ const App: React.FC = () => {
                  <li className="flex items-center gap-2">
                     <TikTokIcon className="text-stcRed w-4 h-4" />
                     <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">TikTok Page</a>
+                 </li>
+                 <li className="flex items-center gap-2">
+                    <WhatsAppIcon className="text-stcRed w-4 h-4" />
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp</a>
                  </li>
               </ul>
             </div>

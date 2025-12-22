@@ -18,6 +18,7 @@ export const CONTACT_PHONE_2 = "+233 545 545 345";
 export const CONTACT_EMAIL = "supermantravelconsult@gmail.com";
 export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61576265866360";
 export const TIKTOK_URL = "https://www.tiktok.com/@superman.travel.c?_r=1&_t=ZM-92QoEqs5I76";
+export const WHATSAPP_URL = "https://wa.me/233545920616";
 export const CONTACT_ADDRESS_1 = "Effiduasi, Opposite District Assembly, Off Asamang Road";
 export const CONTACT_ADDRESS_2 = "Kwamo Kumasi, in front of the chiefs palace, first floor";
 export const WORKING_HOURS = "Monday to Friday: 8am - 4pm";
@@ -31,7 +32,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'study-abroad',
     title: 'Study Abroad',
-    description: 'Expert guidance for university admissions in USA, Canada, UK, China, Schengen, and more.',
+    description: 'Expert guidance for university admissions in USA, Canada, UK, China, Germany, Schengen, and any country of interest.',
     icon: GraduationCap
   },
   {
@@ -104,11 +105,12 @@ Key Information:
 - Email: ${CONTACT_EMAIL}
 - Facebook: ${FACEBOOK_URL}
 - TikTok: ${TIKTOK_URL}
+- WhatsApp: ${WHATSAPP_URL}
 - Working Hours: ${WORKING_HOURS} (${WORKING_HOURS_NOTE})
 - Locations: 
   1. ${CONTACT_ADDRESS_1}
   2. ${CONTACT_ADDRESS_2}
-- Main focus: Study/Work in USA, Canada, UK, China, Dubai, Schengen countries, etc.
+- Main focus: Study/Work in USA, Canada, UK, China, Dubai, Germany, Schengen countries, and any country of interest.
 - Tone: Professional, encouraging, helpful, and concise.
 
 If a user asks to book a service, guide them to call the numbers provided or fill out the contact form on the website.

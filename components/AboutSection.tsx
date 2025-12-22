@@ -23,7 +23,7 @@ const AboutSection: React.FC = () => {
              <p className="text-gray-600 mb-6 leading-relaxed text-lg">
                Superman Travel Consult is dedicated to bridging the gap between your dreams and reality. 
                We specialize in assisting students, workers, and travelers in navigating the complex procedures 
-               of international travel, specifically tailored for destinations like the USA, Canada, UK, China, Dubai, and Schengen countries.
+               of international travel, specifically tailored for destinations like the USA, Canada, UK, China, Dubai, Germany, Schengen countries, and any country of your choice.
              </p>
              
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
