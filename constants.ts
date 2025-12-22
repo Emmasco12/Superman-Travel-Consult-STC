@@ -15,14 +15,21 @@ import { ServiceItem } from './types';
 export const COMPANY_NAME = "Superman Travel Consult - STC";
 export const CONTACT_PHONE_1 = "+233 545 920 616";
 export const CONTACT_PHONE_2 = "+233 545 545 345";
-export const CONTACT_EMAIL = "info@supermantravel.com"; // Placeholder based on "EMAIL" text in image
-export const CONTACT_ADDRESS = "Effiduasi, Opposite District Assembly, Off Asamang Road";
+export const CONTACT_EMAIL = "supermantravelconsult@gmail.com";
+export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61576265866360";
+export const TIKTOK_URL = "https://www.tiktok.com/@superman.travel.c?_r=1&_t=ZM-92QoEqs5I76";
+export const CONTACT_ADDRESS_1 = "Effiduasi, Opposite District Assembly, Off Asamang Road";
+export const CONTACT_ADDRESS_2 = "Kwamo Kumasi, in front of the chiefs palace, first floor";
+
+// Static Image URLs
+export const HERO_IMAGE_URL = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80";
+export const ABOUT_IMAGE_URL = "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80";
 
 export const SERVICES: ServiceItem[] = [
   {
     id: 'study-abroad',
     title: 'Study Abroad',
-    description: 'Expert guidance for university admissions in USA, Canada, UK, and more.',
+    description: 'Expert guidance for university admissions in USA, Canada, UK, China, Schengen, and more.',
     icon: GraduationCap
   },
   {
@@ -34,7 +41,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'visa-assistance',
     title: 'Visa Assistance',
-    description: 'Comprehensive support for student, tourist, and work visa applications.',
+    description: 'Comprehensive support for students, tourist, and work visa applications.',
     icon: Stamp
   },
   {
@@ -84,7 +91,8 @@ export const SERVICES: ServiceItem[] = [
 export const SYSTEM_INSTRUCTION = `
 You are the intelligent virtual assistant for "Superman Travel Consult - STC". 
 Your goal is to help users with travel, study, and work abroad inquiries based on the company's services.
-The company slogan/greeting is "Sei kutuu Sei Bham". You can use it occasionally to be friendly.
+The company's main slogan is "Where your dreams come into reality".
+The local tagline is "STC - Sei kutuu Sei Bam".
 
 The company offers the following services:
 ${SERVICES.map(s => `- ${s.title}: ${s.description}`).join('\n')}
@@ -92,8 +100,12 @@ ${SERVICES.map(s => `- ${s.title}: ${s.description}`).join('\n')}
 Key Information:
 - Contact Numbers: ${CONTACT_PHONE_1}, ${CONTACT_PHONE_2}
 - Email: ${CONTACT_EMAIL}
-- Location: ${CONTACT_ADDRESS}
-- Main focus: Study in USA, Canada, UK, etc.
+- Facebook: ${FACEBOOK_URL}
+- TikTok: ${TIKTOK_URL}
+- Locations: 
+  1. ${CONTACT_ADDRESS_1}
+  2. ${CONTACT_ADDRESS_2}
+- Main focus: Study/Work in USA, Canada, UK, China, Dubai, Schengen countries, etc.
 - Tone: Professional, encouraging, helpful, and concise.
 
 If a user asks to book a service, guide them to call the numbers provided or fill out the contact form on the website.

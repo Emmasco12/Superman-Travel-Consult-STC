@@ -10,7 +10,7 @@ const AiAssistant: React.FC = () => {
     {
       id: 'welcome',
       role: 'model',
-      text: 'Sei kutuu Sei Bham! Hello! I am the Superman Travel Assistant. Ask me about our study abroad programs, visa assistance, or flight bookings!',
+      text: 'Welcome to Superman Travel Consult! Where your dreams come into reality. STC - Sei kutuu Sei Bam! How can I assist you today?',
       timestamp: new Date()
     }
   ]);

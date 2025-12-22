@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { scrollToSection } from '../utils';
+import { HERO_IMAGE_URL } from '../constants';
 
 const Hero: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/1920/1080?grayscale" 
+          src={HERO_IMAGE_URL}
           alt="Traveler at airport" 
           className="w-full h-full object-cover"
         />
@@ -18,15 +19,16 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center md:text-left">
         <div className="max-w-3xl">
-          <h2 className="text-stcRed font-bold tracking-widest uppercase mb-4 text-sm md:text-base animate-fade-in-up">
-            Sei kutuu Sei Bham
-          </h2>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Study & Work in <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">
-              USA, Canada, UK
-            </span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-3 leading-tight drop-shadow-lg animate-fade-in-up">
+            Superman Travel Consult
           </h1>
+          <p className="text-2xl md:text-3xl font-medium text-white mb-4 italic drop-shadow-md">
+            Where your dreams come into reality
+          </p>
+          <h2 className="text-xl md:text-2xl font-bold text-stcRed tracking-widest uppercase mb-8 drop-shadow-sm">
+            STC - Sei kutuu Sei Bam
+          </h2>
+          
           <p className="text-gray-200 text-lg mb-8 max-w-xl leading-relaxed">
             Professional guidance for your international dreams. From visa assistance to flight reservations, we handle the details so you can focus on the journey.
           </p>

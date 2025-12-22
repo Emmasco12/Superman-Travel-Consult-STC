@@ -1,28 +1,46 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS } from '../constants';
+import { Phone, Mail, MapPin, Facebook, Share2 } from 'lucide-react';
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL } from '../constants';
+
+// TikTok Icon Component since it might not be available in all versions of lucide-react
+const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-stcBlue text-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Contact Superman Travel Consult today. Whether you need a student visa for the USA or a work permit for Canada, we are here to help.
+              Contact Superman Travel Consult today. Whether you need a student visa for the USA, a work permit for Canada, or planning a trip to China, Dubai, or Schengen countries, we are here to help.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Phone */}
             <div className="flex flex-col items-center p-8 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1">
               <div className="bg-stcRed p-4 rounded-full mb-6 shadow-lg">
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold mb-4 uppercase tracking-wide text-blue-100">Call Us</h3>
-              <p className="font-bold text-xl mb-1">{CONTACT_PHONE_1}</p>
-              <p className="font-bold text-xl text-blue-200">{CONTACT_PHONE_2}</p>
+              <p className="font-bold text-xl mb-1 whitespace-nowrap">{CONTACT_PHONE_1}</p>
+              <p className="font-bold text-xl text-blue-200 whitespace-nowrap">{CONTACT_PHONE_2}</p>
             </div>
 
             {/* Email */}
@@ -41,7 +59,44 @@ const ContactSection: React.FC = () => {
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold mb-4 uppercase tracking-wide text-blue-100">Visit Us</h3>
-              <p className="font-bold text-lg text-center px-4">{CONTACT_ADDRESS}</p>
+              <div className="space-y-4 text-center px-4 w-full">
+                <div className="pb-3 border-b border-white/10 last:border-0 last:pb-0">
+                  <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Office 1</h4>
+                  <p className="font-bold text-sm leading-tight">{CONTACT_ADDRESS_1}</p>
+                </div>
+                <div>
+                   <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Office 2</h4>
+                  <p className="font-bold text-sm leading-tight">{CONTACT_ADDRESS_2}</p>
+                </div>
+              </div>
+            </div>
+
+             {/* Social Media */}
+             <div className="flex flex-col items-center p-8 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="bg-stcRed p-4 rounded-full mb-6 shadow-lg">
+                <Share2 className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-4 uppercase tracking-wide text-blue-100">Follow Us</h3>
+              <div className="flex flex-col w-full gap-3">
+                <a 
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-lg transition-colors w-full font-medium"
+                >
+                  <Facebook className="w-5 h-5" />
+                  <span>Facebook</span>
+                </a>
+                <a 
+                  href={TIKTOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-black hover:bg-gray-900 py-2 px-4 rounded-lg transition-colors w-full font-medium border border-gray-700"
+                >
+                  <TikTokIcon className="w-5 h-5" />
+                  <span>TikTok</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
