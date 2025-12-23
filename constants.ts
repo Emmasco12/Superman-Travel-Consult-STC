@@ -32,7 +32,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'study-abroad',
     title: 'Study Abroad',
-    description: 'Expert guidance for university admissions in USA, Canada, UK, China, Germany, Schengen, and any country of interest.',
+    description: 'Expert guidance for university admissions in USA, Canada, UK, China, Schengen, and any country of interest.',
     icon: GraduationCap
   },
   {
@@ -110,7 +110,7 @@ Key Information:
 - Locations: 
   1. ${CONTACT_ADDRESS_1}
   2. ${CONTACT_ADDRESS_2}
-- Main focus: Study/Work in USA, Canada, UK, China, Dubai, Germany, Schengen countries, and any country of interest.
+- Main focus: Study/Work in USA, Canada, UK, China, Dubai, Schengen countries, and any country of interest.
 - Tone: Professional, encouraging, helpful, and concise.
 
 If a user asks to book a service, guide them to call the numbers provided or fill out the contact form on the website.

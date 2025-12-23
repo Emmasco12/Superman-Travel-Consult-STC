@@ -58,7 +58,7 @@ const App: React.FC = () => {
         <section className="bg-stcRed py-16 text-white overflow-hidden relative">
           <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">Dreaming of USA, UK, China, Dubai, Germany, or any country of interest?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">Dreaming of USA, UK, China, Dubai, or any country of interest?</h2>
               <p className="text-red-100 text-lg md:text-xl">Let us handle the paperwork while you pack your bags.</p>
             </div>
             <a 
@@ -85,11 +85,17 @@ const App: React.FC = () => {
               </p>
               <div className="flex items-start gap-2 text-sm mb-2">
                  <MapPin size={16} className="mt-1 flex-shrink-0 text-stcRed" />
-                 <span>{CONTACT_ADDRESS_1}</span>
+                 <div className="flex flex-col">
+                   <span className="text-xs font-bold text-stcRed uppercase mb-0.5">Headquarters</span>
+                   <span>{CONTACT_ADDRESS_1}</span>
+                 </div>
               </div>
               <div className="flex items-start gap-2 text-sm">
                  <MapPin size={16} className="mt-1 flex-shrink-0 text-stcRed" />
-                 <span>{CONTACT_ADDRESS_2}</span>
+                 <div className="flex flex-col">
+                   <span className="text-xs font-bold text-stcRed uppercase mb-0.5">Branches</span>
+                   <span>{CONTACT_ADDRESS_2}</span>
+                 </div>
               </div>
             </div>
             <div>
@@ -106,11 +112,11 @@ const App: React.FC = () => {
               <ul className="space-y-3 text-sm">
                  <li className="flex items-center gap-2">
                     <Phone size={16} className="text-stcRed" />
-                    <span>{CONTACT_PHONE_1}</span>
+                    <a href={`tel:${CONTACT_PHONE_1.replace(/\s+/g, '')}`} className="hover:text-white transition">{CONTACT_PHONE_1}</a>
                  </li>
                  <li className="flex items-center gap-2">
                     <Mail size={16} className="text-stcRed" />
-                    <span>{CONTACT_EMAIL}</span>
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition">{CONTACT_EMAIL}</a>
                  </li>
                  <li className="flex items-start gap-2">
                     <Clock size={16} className="text-stcRed mt-1" />

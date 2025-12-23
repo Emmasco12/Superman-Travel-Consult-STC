@@ -46,7 +46,7 @@ const ContactSection: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Contact Superman Travel Consult today. Whether you need a student visa for the USA, a work permit for Canada, or planning a trip to China, Dubai, Germany, Schengen countries, or any country of interest, we are here to help.
+              Contact Superman Travel Consult today. Whether you need a student visa for the USA, a work permit for Canada, or planning a trip to China, Dubai, Schengen countries, or any country of interest, we are here to help.
             </p>
           </div>
 
@@ -57,8 +57,8 @@ const ContactSection: React.FC = () => {
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold mb-4 uppercase tracking-wide text-blue-100">Call Us</h3>
-              <p className="font-bold text-xl mb-1 whitespace-nowrap">{CONTACT_PHONE_1}</p>
-              <p className="font-bold text-xl text-blue-200 whitespace-nowrap">{CONTACT_PHONE_2}</p>
+              <a href={`tel:${CONTACT_PHONE_1.replace(/\s+/g, '')}`} className="font-bold text-xl mb-1 whitespace-nowrap hover:text-blue-300 transition-colors">{CONTACT_PHONE_1}</a>
+              <a href={`tel:${CONTACT_PHONE_2.replace(/\s+/g, '')}`} className="font-bold text-xl text-blue-200 whitespace-nowrap hover:text-white transition-colors">{CONTACT_PHONE_2}</a>
             </div>
 
             {/* Email */}
@@ -67,7 +67,7 @@ const ContactSection: React.FC = () => {
                 <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold mb-4 uppercase tracking-wide text-blue-100">Email Us</h3>
-              <p className="font-bold text-lg break-all text-center">{CONTACT_EMAIL}</p>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold text-lg break-all text-center hover:text-blue-300 transition-colors">{CONTACT_EMAIL}</a>
               <p className="text-sm text-blue-300 mt-2">We reply within 24 hours</p>
             </div>
 
@@ -79,11 +79,11 @@ const ContactSection: React.FC = () => {
               <h3 className="text-lg font-bold mb-4 uppercase tracking-wide text-blue-100">Visit Us</h3>
               <div className="space-y-4 text-center px-4 w-full">
                 <div className="pb-3 border-b border-white/10 last:border-0 last:pb-0">
-                  <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Office 1</h4>
+                  <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Headquarters</h4>
                   <p className="font-bold text-sm leading-tight">{CONTACT_ADDRESS_1}</p>
                 </div>
                 <div>
-                   <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Office 2</h4>
+                   <h4 className="text-xs uppercase tracking-widest text-blue-300 mb-1">Branches</h4>
                   <p className="font-bold text-sm leading-tight">{CONTACT_ADDRESS_2}</p>
                 </div>
                 <div className="pt-3 border-t border-white/10 mt-2">
