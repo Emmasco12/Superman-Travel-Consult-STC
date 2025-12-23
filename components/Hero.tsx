@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           <p className="text-2xl md:text-3xl font-medium text-white mb-4 italic drop-shadow-md">
             Where your dreams come into reality
           </p>
-          <h2 className="text-xl md:text-2xl font-bold text-stcRed tracking-widest uppercase mb-8 drop-shadow-sm">
+          <h2 className="text-xl md:text-2xl font-bold text-[#FF0000] tracking-widest uppercase mb-8 drop-shadow-sm">
             STC - Sei kutuu Sei Bam
           </h2>
           
