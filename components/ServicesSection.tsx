@@ -41,6 +41,9 @@ const ServicesSection: React.FC = () => {
                  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-xl pl-1 leading-none">
                     SUPERMAN Travel <span className="block text-3xl md:text-5xl mt-2 text-yellow-400">Consult-STC</span>
                  </h1>
+                 <p className="text-base md:text-xl text-stcRed font-bold pl-1 italic tracking-wide">
+                   Where your dreams come into reality
+                 </p>
                  <p className="text-lg md:text-2xl text-white font-bold pl-1 italic tracking-wide">
                    Do you want to watch
                  </p>
@@ -79,7 +82,7 @@ const ServicesSection: React.FC = () => {
                  </a>
 
                  {/* Benefits List Mobile */}
-                 <div className="bg-black/40 p-5 rounded-xl border border-white/10 backdrop-blur-md">
+                 <div className="pt-2">
                     <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide">Benefits of the World Cup VISA</h4>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3 text-white text-base font-medium">
@@ -182,23 +185,23 @@ const ServicesSection: React.FC = () => {
                 <ArrowRight size={20} />
              </a>
              
-             {/* Benefits List Desktop */}
-             <div className="bg-black/60 p-5 rounded-xl backdrop-blur-md border border-white/10 shadow-xl">
-                <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide">Benefits of the World Cup VISA</h4>
+             {/* Benefits List Desktop - Removed background */}
+             <div className="p-2">
+                <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide drop-shadow-md">Benefits of the World Cup VISA</h4>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-3 text-white text-base font-medium">
+                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                     <span className="text-yellow-400 font-bold min-w-[15px]">1.</span> 
                     <span>Registration as a member</span>
                   </li>
-                  <li className="flex items-start gap-3 text-white text-base font-medium">
+                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                     <span className="text-yellow-400 font-bold min-w-[15px]">2.</span> 
                     <span>Uniforms Including Tracksuit and T-Shirts</span>
                   </li>
-                  <li className="flex items-start gap-3 text-white text-base font-medium">
+                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                     <span className="text-yellow-400 font-bold min-w-[15px]">3.</span> 
                     <span>Games tickets at least 3</span>
                   </li>
-                  <li className="flex items-start gap-3 text-white text-base font-medium">
+                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                     <span className="text-yellow-400 font-bold min-w-[15px]">4.</span> 
                     <span>Special Package</span>
                   </li>
