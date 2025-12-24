@@ -188,7 +188,7 @@ const ServicesSection: React.FC = () => {
              {/* Benefits List Desktop - Removed background */}
              <div className="p-2">
                 <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide drop-shadow-md">Benefits of the World Cup VISA</h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                     <span className="text-yellow-400 font-bold min-w-[15px]">1.</span> 
                     <span>Registration as a member</span>
