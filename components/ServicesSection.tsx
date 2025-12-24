@@ -31,7 +31,7 @@ const ServicesSection: React.FC = () => {
           <div className="relative z-10 grid lg:grid-cols-12 gap-8 p-8 md:p-12 items-center">
             
             {/* Left Content (6 columns) */}
-            <div className="lg:col-span-6 text-white space-y-6 md:space-y-8 relative z-20 lg:pb-32">
+            <div className="lg:col-span-6 text-white space-y-6 md:space-y-8 relative z-20">
                {/* Badge & Company Name */}
                <div className="flex flex-col items-start gap-4">
                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-5 py-2 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg border border-red-500/50 backdrop-blur-md">
@@ -70,34 +70,34 @@ const ServicesSection: React.FC = () => {
                  Experience the thrill live at the park! We provide visa assistance, flight packages, and accommodation.
                </p>
 
-               {/* Mobile Button and Benefits (Visible only on small screens) */}
-               <div className="flex flex-col gap-6 pt-2 lg:hidden">
+               {/* Button and Benefits (In Flow) */}
+               <div className="flex flex-col gap-6 pt-4 max-w-md">
                  <a 
                    href="#contact" 
                    onClick={(e) => scrollToSection(e, 'contact')}
-                   className="inline-flex items-center justify-center gap-3 bg-white text-stcBlue hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 cursor-pointer"
+                   className="inline-flex items-center justify-center gap-3 bg-white text-stcBlue hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 cursor-pointer w-fit"
                  >
                     <span>Book Consultation</span>
                     <ArrowRight size={20} />
                  </a>
 
-                 {/* Benefits List Mobile */}
+                 {/* Benefits List */}
                  <div className="pt-2">
-                    <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide">Benefits of the World Cup VISA</h4>
+                    <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide drop-shadow-md">Benefits of the World Cup VISA</h4>
                     <ul className="space-y-3">
-                      <li className="flex items-start gap-3 text-white text-base font-medium">
+                      <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                         <span className="text-yellow-400 font-bold min-w-[20px]">1.</span> 
                         <span>Registration as a member</span>
                       </li>
-                      <li className="flex items-start gap-3 text-white text-base font-medium">
+                      <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                         <span className="text-yellow-400 font-bold min-w-[20px]">2.</span> 
                         <span>Uniforms Including Tracksuit and T-Shirts</span>
                       </li>
-                      <li className="flex items-start gap-3 text-white text-base font-medium">
+                      <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                         <span className="text-yellow-400 font-bold min-w-[20px]">3.</span> 
                         <span>Games tickets at least 3</span>
                       </li>
-                      <li className="flex items-start gap-3 text-white text-base font-medium">
+                      <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
                         <span className="text-yellow-400 font-bold min-w-[20px]">4.</span> 
                         <span>Special Package</span>
                       </li>
@@ -172,41 +172,6 @@ const ServicesSection: React.FC = () => {
                     </div>
                 </div>
             </div>
-          </div>
-
-          {/* Desktop Button and Benefits (Absolute Bottom Left) */}
-          <div className="hidden lg:flex flex-col gap-6 absolute bottom-8 left-12 z-30 max-w-md">
-             <a 
-               href="#contact" 
-               onClick={(e) => scrollToSection(e, 'contact')}
-               className="inline-flex items-center justify-center gap-3 bg-white text-stcBlue hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 cursor-pointer w-fit"
-             >
-                <span>Book Consultation</span>
-                <ArrowRight size={20} />
-             </a>
-             
-             {/* Benefits List Desktop - Removed background */}
-             <div className="p-2">
-                <h4 className="text-yellow-400 font-bold text-lg mb-3 tracking-wide drop-shadow-md">Benefits of the World Cup VISA</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
-                    <span className="text-yellow-400 font-bold min-w-[15px]">1.</span> 
-                    <span>Registration as a member</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
-                    <span className="text-yellow-400 font-bold min-w-[15px]">2.</span> 
-                    <span>Uniforms Including Tracksuit and T-Shirts</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
-                    <span className="text-yellow-400 font-bold min-w-[15px]">3.</span> 
-                    <span>Games tickets at least 3</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-white text-base font-medium drop-shadow-md">
-                    <span className="text-yellow-400 font-bold min-w-[15px]">4.</span> 
-                    <span>Special Package</span>
-                  </li>
-                </ul>
-             </div>
           </div>
         </div>
 
