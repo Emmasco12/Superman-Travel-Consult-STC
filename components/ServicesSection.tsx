@@ -38,8 +38,8 @@ const ServicesSection: React.FC = () => {
                     <Trophy size={16} className="text-yellow-300" /> 
                     <span>Official Event Support</span>
                  </div>
-                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-xl pl-1 leading-none">
-                    SUPERMAN Travel <span className="block text-3xl md:text-5xl mt-2 text-yellow-400">Consult-STC</span>
+                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-stcRed drop-shadow-xl pl-1 leading-none">
+                    SUPERMAN Travel <span className="block text-3xl md:text-5xl mt-2 text-stcRed">Consult-STC</span>
                  </h1>
                  <p className="text-base md:text-xl text-stcRed font-bold pl-1 italic tracking-wide">
                    Where your dreams come into reality

@@ -1,6 +1,24 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Share2, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Share2, Clock } from 'lucide-react';
 import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from '../constants';
+
+// Facebook Icon Component
+const FacebookIcon: React.FC<{ className?: string; size?: number }> = ({ className, size = 24 }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
 
 // TikTok Icon Component since it might not be available in all versions of lucide-react
 const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -109,7 +127,7 @@ const ContactSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-lg transition-colors w-full font-medium"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <FacebookIcon className="w-5 h-5" />
                   <span>Facebook</span>
                 </a>
                 <a 

@@ -4,8 +4,8 @@ export const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: stri
   e.preventDefault();
   const element = document.getElementById(id);
   if (element) {
-    // Offset for the sticky header (approx 85px)
-    const headerOffset = 85;
+    // No offset needed for non-fixed header
+    const headerOffset = 0;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - headerOffset;
 

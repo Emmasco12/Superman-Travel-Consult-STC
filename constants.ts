@@ -25,7 +25,7 @@ export const WORKING_HOURS = "Monday to Friday: 8am - 4pm";
 export const WORKING_HOURS_NOTE = "Holidays are excluded";
 
 // Static Image URLs
-export const HERO_IMAGE_URL = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80";
+export const HERO_IMAGE_URL = "https://lh3.googleusercontent.com/d/1-d-oXLd7n3QQl5N8URK0aTkVkp2Ic3xQ";
 export const ABOUT_IMAGE_URL = "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80";
 
 export const SERVICES: ServiceItem[] = [

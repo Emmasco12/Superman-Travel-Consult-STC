@@ -79,7 +79,7 @@ const App: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-b border-gray-800 pb-8">
             <div>
-              <h4 className="text-white font-bold text-lg mb-4">Superman Travel Consult</h4>
+              <h4 className="text-stcRed font-bold text-lg mb-4">Superman Travel Consult</h4>
               <p className="text-sm leading-relaxed mb-4">
                 Your trusted partner for international education, work permits, and seamless travel experiences. We bridge the gap between you and your global dreams.
               </p>

@@ -12,23 +12,24 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-md">
       {/* w-full and minimized padding to push logo to the far left */}
       <div className="w-full px-2 md:px-6 py-2 flex justify-between items-center">
         {/* Logo Area */}
         <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           {!logoError ? (
             <img 
-              src="/logo.png" 
+              src="https://lh3.googleusercontent.com/d/15XceLRAGnGyzOtOWtENmcb8jFRdd4Rzi" 
               alt="Superman Travel Consult - STC" 
-              className="h-20 md:h-28 w-auto object-contain"
+              className="h-28 md:h-40 w-auto object-contain"
+              referrerPolicy="no-referrer"
               onError={() => setLogoError(true)}
             />
           ) : (
             /* Fallback Logo Construction matching the image provided */
             <div className="flex items-center gap-2">
               {/* Icon Graphic */}
-              <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center">
+              <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
                 {/* Red Pin */}
                 <MapPin className="w-full h-full text-stcRed fill-current" strokeWidth={1} />
                 
@@ -45,10 +46,10 @@ const Header: React.FC = () => {
 
               {/* Text Graphic */}
               <div className="flex flex-col justify-center -space-y-1 pt-1">
-                <span className="text-stcBlue font-bold text-lg md:text-xl leading-none tracking-tight">SupermanTravel</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-stcDark font-bold text-sm md:text-base tracking-wide">Consult</span>
-                  <span className="text-stcDark font-extrabold text-2xl md:text-3xl leading-none">STC</span>
+                <span className="text-stcRed font-bold text-xl md:text-2xl leading-none tracking-tight">SupermanTravel</span>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-stcDark font-bold text-base md:text-lg tracking-wide">Consult</span>
+                  <span className="text-stcDark font-extrabold text-3xl md:text-4xl leading-none">STC</span>
                 </div>
               </div>
             </div>
