@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SERVICES } from '../constants';
-import { Trophy, Plane, ArrowRight, MapPin, Calendar, Ticket } from 'lucide-react';
+import { Trophy, Plane, ArrowRight, MapPin, Calendar, Ticket, Sparkles } from 'lucide-react';
 import { scrollToSection } from '../utils';
+import StudyAbroadDetail from './StudyAbroadDetail';
+import { AnimatePresence, motion } from 'motion/react';
 
 const ServicesSection: React.FC = () => {
+  const [showStudyAbroad, setShowStudyAbroad] = useState(false);
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -14,9 +18,13 @@ const ServicesSection: React.FC = () => {
           <div className="w-24 h-1.5 bg-stcRed mx-auto rounded-full"></div>
         </div>
 
-        {/* Professional World Cup 2026 Flyer */}
+        <AnimatePresence>
+          {showStudyAbroad && (
+            <StudyAbroadDetail key="study-abroad-detail" onBack={() => setShowStudyAbroad(false)} />
+          )}
+        </AnimatePresence>
+
         <div className="relative w-full max-w-7xl mx-auto mb-20 rounded-3xl overflow-hidden shadow-2xl group border border-gray-200/50">
-          
           {/* Background Park/Stadium Image - CLEAR VISIBILITY */}
           <div className="absolute inset-0">
             <img 
@@ -180,8 +188,14 @@ const ServicesSection: React.FC = () => {
           {SERVICES.map((service) => (
             <div 
               key={service.id}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-b-4 border-transparent hover:border-stcRed group flex flex-col h-full"
+              onClick={() => service.id === 'study-abroad' && setShowStudyAbroad(true)}
+              className={`bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-b-4 border-transparent hover:border-stcRed group flex flex-col h-full relative ${service.id === 'study-abroad' ? 'cursor-pointer hover:-translate-y-2' : ''}`}
             >
+              {service.id === 'study-abroad' && (
+                <div className="absolute top-4 right-4 bg-stcRed text-white p-1.5 rounded-full animate-pulse">
+                  <Sparkles size={14} />
+                </div>
+              )}
               <div className="mb-6 bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-stcRed group-hover:text-white transition-colors duration-300 shadow-sm group-hover:shadow-md">
                 <service.icon size={32} className="text-stcBlue group-hover:text-white transition-colors" />
               </div>
@@ -191,6 +205,12 @@ const ServicesSection: React.FC = () => {
               <p className="text-gray-600 leading-relaxed text-sm flex-grow">
                 {service.description}
               </p>
+              {service.id === 'study-abroad' && (
+                <div className="mt-4 flex items-center gap-2 text-stcRed font-bold text-sm">
+                  <span>Explore Countries</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              )}
             </div>
           ))}
         </div>

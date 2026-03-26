@@ -1,35 +1,38 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { scrollToSection } from '../utils';
-import { HERO_IMAGE_URL } from '../constants';
+import { HERO_VIDEO_URL } from '../constants';
 
 const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
-      {/* Background Image with Overlay */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={HERO_IMAGE_URL}
-          alt="Traveler at airport" 
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
           className="w-full h-full object-cover"
-        />
-        {/* No overlay - image only */}
+        >
+          <source src={HERO_VIDEO_URL} type="video/webm" />
+        </video>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-stcRed mb-6 leading-tight drop-shadow-lg animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg animate-fade-in-up">
             Superman Travel Consult
           </h1>
-          <p className="text-2xl md:text-3xl font-medium text-stcBlue mb-6 italic drop-shadow-md">
+          <p className="text-2xl md:text-3xl font-medium text-yellow-400 mb-6 italic drop-shadow-lg">
             Where your dreams come into reality
           </p>
-          <h2 className="text-xl md:text-2xl font-bold text-stcRed tracking-widest uppercase mb-10 drop-shadow-sm">
+          <h2 className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase mb-10 drop-shadow-sm">
             STC - Sei kutuu Sei Bam
           </h2>
           
-          <p className="text-stcBlue text-lg mb-10 max-w-2xl mx-auto leading-relaxed font-semibold drop-shadow-sm">
+          <p className="text-white text-lg mb-10 max-w-2xl mx-auto leading-relaxed font-semibold drop-shadow-sm">
             Professional guidance for your international dreams. From visa assistance to flight reservations, we handle the details so you can focus on the journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

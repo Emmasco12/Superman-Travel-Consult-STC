@@ -14,6 +14,17 @@ export interface ChatMessage {
   timestamp: Date;
 }
 
+export interface CountryDetail {
+  id: string;
+  name: string;
+  flag: string;
+  image: string;
+  video?: string;
+  benefits: string[];
+  longDescription?: string;
+  universityLogos?: string[];
+}
+
 export enum LoadingState {
   IDLE = 'IDLE',
   LOADING = 'LOADING',
