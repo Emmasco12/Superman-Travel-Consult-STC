@@ -3,7 +3,7 @@ import { SERVICES } from '../constants';
 import { Trophy, Plane, ArrowRight, MapPin, Calendar, Ticket, Sparkles } from 'lucide-react';
 import { scrollToSection } from '../utils';
 import StudyAbroadDetail from './StudyAbroadDetail';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 
 const ServicesSection: React.FC = () => {
   const [showStudyAbroad, setShowStudyAbroad] = useState(false);
