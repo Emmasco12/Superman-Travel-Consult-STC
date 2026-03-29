@@ -98,7 +98,7 @@ export const STUDY_ABROAD_COUNTRIES: CountryDetail[] = [
     name: 'USA',
     flag: '🇺🇸',
     image: 'https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=1200&q=80',
-    video: 'https://www.pexels.com/download/video/6145693/',
+    video: 'https://www.shutterstock.com/shutterstock/videos/3942683181/preview/stock-footage--louisville-superb-quality-aerial-view-shot-of-louisville-kentucky-usa-night.webm',
     benefits: [
       'Home to top-ranked universities and cutting-edge research opportunities',
       'Flexible education system with diverse course options',
