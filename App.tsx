@@ -11,7 +11,7 @@ import AirTicketingDetail from './components/AirTicketingDetail';
 import ConsultationModal from './components/ConsultationModal';
 import { Plane, MapPin, Phone, Mail, Facebook, Clock } from 'lucide-react';
 import { scrollToSection } from './utils';
-import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from './constants';
+import { CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, CONTACT_PHONE_1, CONTACT_EMAIL, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE, GOOGLE_MAPS_LINK } from './constants';
 import { AnimatePresence, motion } from 'motion/react';
 
 // TikTok Icon Component
@@ -127,6 +127,7 @@ const App: React.FC = () => {
                       <li><a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="hover:text-white transition cursor-pointer">Services</a></li>
                       <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-white transition cursor-pointer">About</a></li>
                       <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hover:text-white transition cursor-pointer">Contact Us</a></li>
+                      <li><a href={GOOGLE_MAPS_LINK} target="_blank" rel="noopener noreferrer" className="text-stcRed hover:text-white transition cursor-pointer flex items-center gap-1 font-medium">Locate us on Google Map <MapPin size={14} /></a></li>
                     </ul>
                   </div>
                   <div>

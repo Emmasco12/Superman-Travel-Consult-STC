@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Share2, Clock, Map as MapIconLucide } from 'lucide-react';
-import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE, GOOGLE_MAPS_URL, GOOGLE_MAPS_LINK } from '../constants';
+import { Phone, Mail, MapPin, Share2, Clock } from 'lucide-react';
+import { CONTACT_PHONE_1, CONTACT_PHONE_2, CONTACT_EMAIL, CONTACT_ADDRESS_1, CONTACT_ADDRESS_2, FACEBOOK_URL, TIKTOK_URL, WHATSAPP_URL, WORKING_HOURS, WORKING_HOURS_NOTE } from '../constants';
 
 // Facebook Icon Component
 const FacebookIcon: React.FC<{ className?: string; size?: number }> = ({ className, size = 24 }) => (
@@ -149,43 +149,6 @@ const ContactSection: React.FC = () => {
                   <span>WhatsApp</span>
                 </a>
               </div>
-            </div>
-          </div>
-
-          {/* Map Section */}
-          <div className="mt-16 bg-white/5 rounded-3xl overflow-hidden border border-white/10 p-2 backdrop-blur-sm">
-            <div className="flex flex-col md:flex-row items-center justify-between p-6 gap-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-stcRed p-3 rounded-xl">
-                  <MapIconLucide className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Find Us on Google Maps</h3>
-                  <p className="text-blue-200 text-sm">Visit our headquarters in Effiduasi</p>
-                </div>
-              </div>
-              <a 
-                href={GOOGLE_MAPS_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-stcBlue hover:bg-blue-50 px-6 py-3 rounded-xl font-bold transition-all flex items-center gap-2 shadow-lg"
-              >
-                Open in Google Maps
-                <Share2 size={18} />
-              </a>
-            </div>
-            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden">
-              <iframe
-                src={GOOGLE_MAPS_URL}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Superman Travel Consult Location"
-                className="grayscale-[0.2] contrast-[1.1]"
-              ></iframe>
             </div>
           </div>
         </div>
