@@ -23,6 +23,8 @@ export const CONTACT_ADDRESS_1 = "Effiduasi, Opposite District Assembly, Off Asa
 export const CONTACT_ADDRESS_2 = "Kwamo Kumasi, in front of the chiefs palace, first floor";
 export const WORKING_HOURS = "Monday to Friday: 8am - 4pm";
 export const WORKING_HOURS_NOTE = "Holidays are excluded";
+export const GOOGLE_MAPS_URL = "https://www.google.com/maps?q=Superman+Travel+Consult+Effiduasi+Opposite+District+Assembly&output=embed";
+export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/XiU3khVmg9KumEoM8";
 
 // Static Image URLs
 export const HERO_IMAGE_URL = "https://lh3.googleusercontent.com/d/1-d-oXLd7n3QQl5N8URK0aTkVkp2Ic3xQ";
