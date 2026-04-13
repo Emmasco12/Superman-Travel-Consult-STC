@@ -2,7 +2,11 @@ import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { ABOUT_IMAGE_URL } from '../constants';
 
-const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  onOpenModal: () => void;
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -26,7 +30,7 @@ const AboutSection: React.FC = () => {
                of international travel, specifically tailored for destinations like the USA, Canada, UK, China, Dubai, Schengen countries, and any country of your choice.
              </p>
              
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                {['Expert Visa Guidance', '98% Success Rate', 'Personalized Support', 'Global Network', 'Fast Processing', 'Reliable Service'].map((item, index) => (
                  <div key={index} className="flex items-center gap-3">
                    <CheckCircle2 className="text-stcRed w-5 h-5 flex-shrink-0" />
@@ -34,6 +38,13 @@ const AboutSection: React.FC = () => {
                  </div>
                ))}
              </div>
+
+             <button 
+               onClick={onOpenModal}
+               className="bg-stcBlue hover:bg-stcRed text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl"
+             >
+               Apply Now
+             </button>
            </div>
         </div>
       </div>

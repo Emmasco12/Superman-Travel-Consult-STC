@@ -3,7 +3,11 @@ import { ChevronRight } from 'lucide-react';
 import { scrollToSection } from '../utils';
 import { HERO_VIDEO_URL } from '../constants';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       {/* Background Video */}
@@ -44,6 +48,12 @@ const Hero: React.FC = () => {
               Explore Services
               <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </a>
+            <button 
+              onClick={onOpenModal}
+              className="bg-white hover:bg-gray-100 text-stcBlue px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center gap-2 shadow-xl"
+            >
+              Free Consultation
+            </button>
           </div>
         </div>
       </div>

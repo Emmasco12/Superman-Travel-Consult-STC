@@ -1,15 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SERVICES } from '../constants';
-import { Trophy, Plane, ArrowRight, MapPin, Calendar, Ticket, Sparkles } from 'lucide-react';
-import { scrollToSection } from '../utils';
-import StudyAbroadDetail from './StudyAbroadDetail';
-import { AnimatePresence } from 'motion/react';
+import { Trophy, Plane, ArrowRight, MapPin, Calendar, Ticket, Sparkles, AlertCircle } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 
-const ServicesSection: React.FC = () => {
-  const [showStudyAbroad, setShowStudyAbroad] = useState(false);
+interface ServicesSectionProps {
+  onSelectService: (id: string) => void;
+  onOpenModal: () => void;
+}
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectService, onOpenModal }) => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    if (showMessage) {
+      const timer = setTimeout(() => setShowMessage(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showMessage]);
+
+  const handleServiceClick = (serviceId: string) => {
+    if (serviceId === 'study-abroad' || serviceId === 'work-abroad' || serviceId === 'visa-assistance' || serviceId === 'air-ticketing') {
+      onSelectService(serviceId);
+    }
+  };
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50 relative">
+      {/* Feedback Message */}
+      <AnimatePresence>
+        {showMessage && (
+          <motion.div 
+            initial={{ opacity: 0, y: -50, x: '-50%' }}
+            animate={{ opacity: 1, y: 20, x: '-50%' }}
+            exit={{ opacity: 0, y: -50, x: '-50%' }}
+            className="fixed top-20 left-1/2 z-[100] bg-stcBlue text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-white/20 backdrop-blur-md"
+          >
+            <AlertCircle className="text-yellow-400" size={20} />
+            <span className="font-bold">Please go back before selecting another option.</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -17,12 +48,6 @@ const ServicesSection: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-stcBlue mb-4">Our Services</h2>
           <div className="w-24 h-1.5 bg-stcRed mx-auto rounded-full"></div>
         </div>
-
-        <AnimatePresence>
-          {showStudyAbroad && (
-            <StudyAbroadDetail key="study-abroad-detail" onBack={() => setShowStudyAbroad(false)} />
-          )}
-        </AnimatePresence>
 
         <div className="relative w-full max-w-7xl mx-auto mb-20 rounded-3xl overflow-hidden shadow-2xl group border border-gray-200/50">
           {/* Background Park/Stadium Image - CLEAR VISIBILITY */}
@@ -80,14 +105,13 @@ const ServicesSection: React.FC = () => {
 
                {/* Button and Benefits (In Flow) */}
                <div className="flex flex-col gap-6 pt-4 max-w-md">
-                 <a 
-                   href="#contact" 
-                   onClick={(e) => scrollToSection(e, 'contact')}
+                 <button 
+                   onClick={onOpenModal}
                    className="inline-flex items-center justify-center gap-3 bg-white text-stcBlue hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 cursor-pointer w-fit"
                  >
                     <span>Book Consultation</span>
                     <ArrowRight size={20} />
-                 </a>
+                 </button>
 
                  {/* Benefits List */}
                  <div className="pt-2">
@@ -139,9 +163,12 @@ const ServicesSection: React.FC = () => {
 
                     {/* Image Area - The Airplane */}
                     <div className="relative h-48 rounded-2xl overflow-hidden mb-4 shadow-lg group-hover:shadow-2xl transition-shadow">
-                       <img 
-                          src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" 
-                          alt="Travel Aeroplane" 
+                       <video 
+                          src="https://www.shutterstock.com/shutterstock/videos/1047297025/preview/stock-footage-san-francisco-ca-british-airways.mp4" 
+                          autoPlay 
+                          loop 
+                          muted 
+                          playsInline
                           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                        />
                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -183,36 +210,41 @@ const ServicesSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {SERVICES.map((service) => (
-            <div 
-              key={service.id}
-              onClick={() => service.id === 'study-abroad' && setShowStudyAbroad(true)}
-              className={`bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-b-4 border-transparent hover:border-stcRed group flex flex-col h-full relative ${service.id === 'study-abroad' ? 'cursor-pointer hover:-translate-y-2' : ''}`}
-            >
-              {service.id === 'study-abroad' && (
-                <div className="absolute top-4 right-4 bg-stcRed text-white p-1.5 rounded-full animate-pulse">
-                  <Sparkles size={14} />
+          {SERVICES.map((service) => {
+            const isInteractive = service.id === 'study-abroad' || service.id === 'work-abroad' || service.id === 'visa-assistance' || service.id === 'air-ticketing';
+
+            return (
+              <div 
+                key={service.id}
+                onClick={() => handleServiceClick(service.id)}
+                className={`bg-white p-8 rounded-2xl transition-all duration-300 border-b-4 flex flex-col h-full relative border-transparent shadow-sm
+                  ${isInteractive ? 'cursor-pointer hover:shadow-xl hover:border-stcRed hover:-translate-y-2' : ''}
+                `}
+              >
+                {isInteractive && (
+                  <div className="absolute top-4 right-4 p-1.5 rounded-full bg-stcRed text-white animate-pulse">
+                    <Sparkles size={14} />
+                  </div>
+                )}
+                <div className="mb-6 w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300 shadow-sm bg-blue-50 text-stcBlue group-hover:bg-stcRed group-hover:text-white">
+                  <service.icon size={32} className="text-stcBlue" />
                 </div>
-              )}
-              <div className="mb-6 bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-stcRed group-hover:text-white transition-colors duration-300 shadow-sm group-hover:shadow-md">
-                <service.icon size={32} className="text-stcBlue group-hover:text-white transition-colors" />
+                <h3 className="text-xl font-bold mb-3 transition-colors text-gray-900">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                  {service.description}
+                </p>
+                {isInteractive && (
+                  <div className="mt-4 flex items-center gap-2 font-bold text-sm text-stcRed">
+                    <span>{service.id === 'visa-assistance' || service.id === 'air-ticketing' ? 'View Details' : 'Explore Countries'}</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                )}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-stcBlue transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-sm flex-grow">
-                {service.description}
-              </p>
-              {service.id === 'study-abroad' && (
-                <div className="mt-4 flex items-center gap-2 text-stcRed font-bold text-sm">
-                  <span>Explore Countries</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
