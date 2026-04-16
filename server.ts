@@ -17,12 +17,14 @@ async function startServer() {
     const smtpPass = process.env.SMTP_PASS?.trim();
     const smtpHost = process.env.SMTP_HOST?.trim() || "smtp.gmail.com";
     const smtpPort = parseInt(process.env.SMTP_PORT?.trim() || "465");
+    const receiverEmail = process.env.RECEIVER_EMAIL?.trim();
 
     // Check if configuration exists
-    if (!smtpUser || !smtpPass) {
+    if (!smtpUser || !smtpPass || !receiverEmail) {
       const missing = [];
       if (!smtpUser) missing.push("SMTP_USER");
       if (!smtpPass) missing.push("SMTP_PASS");
+      if (!receiverEmail) missing.push("RECEIVER_EMAIL");
       
       console.error(`Email configuration missing: ${missing.join(", ")}`);
       return res.status(500).json({ 
@@ -49,7 +51,7 @@ async function startServer() {
 
       const mailOptions = {
         from: `"STC Website" <${smtpUser}>`,
-        to: process.env.RECEIVER_EMAIL?.trim() || "supportquicksellgh@gmail.com",
+        to: receiverEmail,
         subject: `New Consultation Request: ${firstName} ${lastName}`,
         text: `
           New Consultation Request Details:

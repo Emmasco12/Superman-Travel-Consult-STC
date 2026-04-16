@@ -15,10 +15,16 @@ export default async function handler(
   const smtpPass = process.env.SMTP_PASS?.trim();
   const smtpHost = process.env.SMTP_HOST?.trim() || "smtp.gmail.com";
   const smtpPort = parseInt(process.env.SMTP_PORT?.trim() || "465");
+  const receiverEmail = process.env.RECEIVER_EMAIL?.trim();
 
-  if (!smtpUser || !smtpPass) {
+  if (!smtpUser || !smtpPass || !receiverEmail) {
+    const missing = [];
+    if (!smtpUser) missing.push("SMTP_USER");
+    if (!smtpPass) missing.push("SMTP_PASS");
+    if (!receiverEmail) missing.push("RECEIVER_EMAIL");
+
     return res.status(500).json({ 
-      error: "Server email configuration is missing. Please set SMTP_USER and SMTP_PASS in your Vercel environment variables." 
+      error: `Server email configuration is missing: ${missing.join(", ")}. Please set these in your environment variables.` 
     });
   }
 
@@ -37,7 +43,7 @@ export default async function handler(
 
     const mailOptions = {
       from: `"STC Website" <${smtpUser}>`,
-      to: process.env.RECEIVER_EMAIL?.trim() || "supportquicksellgh@gmail.com",
+      to: receiverEmail,
       subject: `New Consultation Request: ${firstName} ${lastName}`,
       text: `
         New Consultation Request Details:
